@@ -9,5 +9,11 @@
 </svelte:head>
 
 <Header />
-<slot />
+
+<main
+  class="px-6 w-full max-w-4xl mx-auto flex flex-col gap-y-16 pb-24 mt-12 flex-1"
+>
+  <slot />
+</main>
+
 <Footer />
