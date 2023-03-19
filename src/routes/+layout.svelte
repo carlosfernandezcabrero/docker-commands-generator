@@ -11,7 +11,7 @@
 <Header />
 
 <main
-  class="px-6 w-full max-w-3xl mx-auto flex flex-col gap-y-16 pb-24 mt-12 flex-1"
+  class="w-full max-w-3xl mx-auto flex flex-col gap-y-16 flex-1 pt-[55px] pb-[70px]"
 >
   <slot />
 </main>
