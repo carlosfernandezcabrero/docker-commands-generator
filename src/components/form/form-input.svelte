@@ -16,7 +16,7 @@
   <input
     {id}
     type="checkbox"
-    class="accent-indigo-600 bg-white w-6 h-6"
+    class="accent-indigo-600 bg-white w-5 h-5 rounded-full"
     bind:checked={value}
     {...$$restProps}
   />
