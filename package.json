@@ -32,5 +32,8 @@
 		"rules": {
 			"@typescript-eslint/space-before-function-paren": "off"
 		}
+	},
+	"dependencies": {
+		"svelte-french-toast": "1.0.4-beta.0"
 	}
 }

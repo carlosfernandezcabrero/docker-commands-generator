@@ -2,11 +2,14 @@
   import '../app.css'
   import Header from '$components/header.svelte'
   import Footer from '$components/footer.svelte'
+  import { Toaster } from 'svelte-french-toast'
 </script>
 
 <svelte:head>
   <title>Docker Commands Generator</title>
 </svelte:head>
+
+<Toaster />
 
 <Header />
 

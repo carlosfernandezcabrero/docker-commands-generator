@@ -1,9 +1,15 @@
 <script lang="ts">
   import Copy from './icons/copy.svelte'
+  import toast from 'svelte-french-toast'
 
   export let textToCopy: string
 
-  const copyToClipboard = () => navigator.clipboard.writeText(textToCopy)
+  function copyToClipboard() {
+    navigator.clipboard.writeText(textToCopy)
+    toast.success('Comando copiado!', {
+      position: 'bottom-center'
+    })
+  }
 </script>
 
 <div
