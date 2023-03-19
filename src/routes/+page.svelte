@@ -30,7 +30,7 @@
           bind:value={$paramsStore.detachMode}
         />
         <FormLabel id="detach_mode" type="checkbox">
-          Ejecutar el contenedor en segundo plano
+          Ejecutar en segundo plano
         </FormLabel>
       </fieldset>
       <fieldset class="flex items-center gap-x-2">
