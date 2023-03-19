@@ -7,6 +7,6 @@
   }
 </script>
 
-<label for={id} class={`${styles[type] || ''}`}>
+<label for={id} class={`${styles[type] || 'flex-1'}`}>
   <slot />
 </label>
