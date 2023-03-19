@@ -9,5 +9,5 @@ body {
 	flex-direction: column;
 	min-height: 100vh;
 
-	@apply text-lg px-6;
+	@apply text-xl px-6;
 }
