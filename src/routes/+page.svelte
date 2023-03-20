@@ -29,7 +29,7 @@
           type="checkbox"
           bind:value={$paramsStore.detachMode}
         />
-        <FormLabel id="detach_mode" type="checkbox">
+        <FormLabel id="detach_mode" type="inline">
           Ejecutar en segundo plano
         </FormLabel>
       </fieldset>
@@ -39,8 +39,7 @@
           type="checkbox"
           bind:value={$paramsStore.runAsSudo}
         />
-        <FormLabel id="run_as_sudo" type="checkbox">Ejecutar con sudo</FormLabel
-        >
+        <FormLabel id="run_as_sudo" type="inline">Ejecutar con sudo</FormLabel>
       </fieldset>
       <fieldset>
         <FormLabel id="image_name">Nombre de la imagen</FormLabel>
@@ -64,7 +63,7 @@
           type="checkbox"
           bind:value={$paramsStore.configHostname}
         />
-        <FormLabel id="config_hostname" type="checkbox">
+        <FormLabel id="config_hostname" type="inline">
           Configurar hostname
         </FormLabel>
       </fieldset>

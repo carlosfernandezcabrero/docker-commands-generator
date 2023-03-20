@@ -1,12 +1,13 @@
 <script lang="ts">
   export let id: string
-  export let type = 'text'
+  export let type = 'block'
 
   const styles: Record<string, string> = {
-    text: 'block mb-2'
+    block: 'block mb-2',
+    inline: 'flex-1'
   }
 </script>
 
-<label for={id} class={`${styles[type] || 'flex-1'}`}>
+<label for={id} class={styles[type]}>
   <slot />
 </label>
