@@ -4,24 +4,29 @@
   import FormFieldset from '$components/form/form-fieldset.svelte'
   import FormInput from '$components/form/form-input.svelte'
   import FormLabel from '$components/form/form-label.svelte'
+  import ForwarderPortsTable from '$components/form/forwarder-ports-table.svelte'
   import NextPage from '$components/icons/next-page.svelte'
   import { paramsStore } from '../stores'
 
   function handleSubmit(event: any) {
     event.preventDefault()
+    if (event.key === 'Enter') return
 
-    const params = Object.entries($paramsStore)
-      .map(([key, value]) => `${key}=${value}`)
-      .join('&')
+    const url = new URL('/commands', window.location.origin)
+    Object.entries($paramsStore).forEach(([key, value]) => {
+      if (Array.isArray(value)) value = value.join(',')
 
-    goto(`/commands?${params}`, {
+      url.searchParams.set(key, value as string)
+    })
+
+    goto(url, {
       replaceState: false
     })
   }
 </script>
 
 <section>
-  <form on:submit={handleSubmit}>
+  <div>
     <div class="flex flex-col gap-y-6">
       <FormFieldset type="inline">
         <FormInput
@@ -77,10 +82,25 @@
           />
         </FormFieldset>
       {/if}
+      <FormFieldset type="inline">
+        <FormInput
+          id="forwarder_ports"
+          type="checkbox"
+          bind:value={$paramsStore.configForwarderPorts}
+        />
+        <FormLabel id="forwarder_ports" type="inline">
+          Redirección de puertos
+        </FormLabel>
+      </FormFieldset>
+      {#if $paramsStore.configForwarderPorts}
+        <FormFieldset transition={true}>
+          <ForwarderPortsTable />
+        </FormFieldset>
+      {/if}
     </div>
 
     <footer class="mt-12 text-center">
-      <NavigationButton component={NextPage} type="submit" />
+      <NavigationButton component={NextPage} onClick={handleSubmit} />
     </footer>
-  </form>
+  </div>
 </section>

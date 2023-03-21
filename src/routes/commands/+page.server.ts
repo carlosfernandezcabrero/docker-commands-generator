@@ -13,10 +13,17 @@ export const load = (({ url }) => {
   const detachMode = searchParams.get('detachMode') === 'true' ? ' -d' : ''
   const runAsSudo = searchParams.get('runAsSudo') === 'true' ? 'sudo ' : ''
   const hostname = searchParams.get('hostname') as string
+  const forwarderPorts = (searchParams.get('forwarderPorts') as string)
+    .split(',')
+    .join(' -p ')
 
   const hostnameOption =
     searchParams.get('configHostname') === 'true'
       ? ` --hostname ${hostname}`
+      : ''
+  const forwarderPortsOption =
+    searchParams.get('configForwarderPorts') === 'true'
+      ? ` -p ${forwarderPorts}`
       : ''
 
   const commands: Command[] = [
@@ -26,7 +33,7 @@ export const load = (({ url }) => {
     },
     {
       description: 'Levantar contenedor',
-      command: `${runAsSudo}docker run${detachMode}${hostnameOption} --name ${containerName} ${imageName}`
+      command: `${runAsSudo}docker run${detachMode}${hostnameOption}${forwarderPortsOption} --name ${containerName} ${imageName}`
     },
     {
       description: 'Parar contenedor',

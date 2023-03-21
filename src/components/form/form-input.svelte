@@ -2,13 +2,21 @@
   export let id: string
   export let type = 'text'
   export let value: any
+  export let size = 'normal'
+
+  const sizes: Record<string, string> = {
+    normal: 'p-2',
+    small: 'px-1.5 py-0.5 text-lg'
+  }
+
+  const dynamicStyles = `${sizes[size]}`
 </script>
 
 {#if type === 'text'}
   <input
     {id}
     type="text"
-    class="bg-gray-50 border border-gray-300 w-full p-2 focus:text-gray-600 focus:font-medium focus:outline-docker-primary"
+    class={`${dynamicStyles} bg-gray-50 border border-gray-300 w-full focus:text-gray-600 focus:font-medium focus:outline-docker-primary`}
     bind:value
     {...$$restProps}
   />

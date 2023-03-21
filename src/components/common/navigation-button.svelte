@@ -1,6 +1,6 @@
 <script lang="ts">
   export let component: any
-  export let onClick = () => {}
+  export let onClick: any = () => {}
 </script>
 
 <button
