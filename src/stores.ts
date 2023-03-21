@@ -1,9 +1,9 @@
 import { writable } from 'svelte/store'
 
 interface Params {
-  containerName: string
   configForwarderPorts: boolean
   configHostname: boolean
+  containerName: string
   detachMode: boolean
   forwarderPorts: string[]
   hostname: string
@@ -12,12 +12,12 @@ interface Params {
 }
 
 export const paramsStore = writable<Params>({
-  detachMode: true,
-  imageName: '',
-  containerName: '',
-  runAsSudo: false,
-  configHostname: false,
-  hostname: '',
   configForwarderPorts: false,
-  forwarderPorts: []
+  configHostname: false,
+  containerName: '',
+  detachMode: true,
+  forwarderPorts: [],
+  hostname: '',
+  imageName: '',
+  runAsSudo: false
 })
