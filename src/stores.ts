@@ -18,6 +18,6 @@ export const paramsStore = writable<Params>({
   runAsSudo: false,
   configHostname: false,
   hostname: '',
-  configForwarderPorts: true,
+  configForwarderPorts: false,
   forwarderPorts: []
 })
