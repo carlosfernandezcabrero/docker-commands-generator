@@ -36,6 +36,10 @@ export const load = (({ url }) => {
       command: `${runAsSudo}docker run${detachMode}${hostnameOption}${forwarderPortsOption} --name ${containerName} ${imageName}`
     },
     {
+      description: 'Arrancar contenedor',
+      command: `${runAsSudo}docker start ${containerName}`
+    },
+    {
       description: 'Parar contenedor',
       command: `${runAsSudo}docker stop ${containerName}`
     },
