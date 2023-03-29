@@ -16,7 +16,7 @@
   <input
     {id}
     type="text"
-    class={`${dynamicStyles} bg-gray-50 border border-gray-300 w-full focus:text-gray-600 focus:font-medium focus:outline-docker-primary`}
+    class={`${dynamicStyles} bg-gray-50 border border-gray-300 w-full focus:outline-docker-primary`}
     bind:value
     {...$$restProps}
   />
