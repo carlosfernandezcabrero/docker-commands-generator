@@ -5,10 +5,6 @@
   import { Toaster } from 'svelte-french-toast'
 </script>
 
-<svelte:head>
-  <title>Docker Commands Generator</title>
-</svelte:head>
-
 <Toaster />
 
 <Header />

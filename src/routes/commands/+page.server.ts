@@ -71,5 +71,5 @@ export const load = (({ url }) => {
     }
   ]
 
-  return { commands, snippets }
+  return { commands, snippets, containerName }
 }) as PageServerLoad
