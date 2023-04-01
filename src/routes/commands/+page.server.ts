@@ -58,6 +58,10 @@ export const load = (({ url }) => {
   ]
   const snippets: Command[] = [
     {
+      description: 'Parar y borrar contenedor',
+      command: [stopContainerCommand, removeContainerCommand].join(' && ')
+    },
+    {
       description: 'Parar contenedor y borrar contenedor e imagen',
       command: [
         stopContainerCommand,
