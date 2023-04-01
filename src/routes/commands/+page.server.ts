@@ -26,6 +26,10 @@ export const load = (({ url }) => {
       ? ` -p ${forwarderPorts}`
       : ''
 
+  const stopContainerCommand = `${runAsSudo}docker stop ${containerName}`
+  const removeContainerCommand = `${runAsSudo}docker rm ${containerName}`
+  const removeImageCommand = `${runAsSudo}docker rmi ${imageName}`
+
   const commands: Command[] = [
     {
       description: 'Crear imagen',
@@ -41,17 +45,27 @@ export const load = (({ url }) => {
     },
     {
       description: 'Parar contenedor',
-      command: `${runAsSudo}docker stop ${containerName}`
+      command: stopContainerCommand
     },
     {
       description: 'Borrar contenedor',
-      command: `${runAsSudo}docker rm ${containerName}`
+      command: removeContainerCommand
     },
     {
       description: 'Borrar imagen',
-      command: `${runAsSudo}docker rmi ${imageName}`
+      command: removeImageCommand
+    }
+  ]
+  const snippets: Command[] = [
+    {
+      description: 'Parar contenedor y borrar contenedor e imagen',
+      command: [
+        stopContainerCommand,
+        removeContainerCommand,
+        removeImageCommand
+      ].join(' && ')
     }
   ]
 
-  return { commands }
+  return { commands, snippets }
 }) as PageServerLoad
