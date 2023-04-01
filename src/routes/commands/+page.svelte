@@ -1,5 +1,5 @@
 <script>
-  import CommandBox from '$components/commands/command-box.svelte'
+  import CommandsSection from '$components/commands/commands-section.svelte'
   import Layout from '$components/common/layout.svelte'
   import NavigationButton from '$components/common/navigation-button.svelte'
   import PreviousPage from '$components/icons/previous-page.svelte'
@@ -13,25 +13,8 @@
 <Layout title={data.containerName}>
   <div in:fade={{ delay: 200, duration: 250 }}>
     <div class="flex flex-col gap-y-12">
-      <section>
-        <h3 class="text-3xl border-b border-gray-300 mb-5">Comandos</h3>
-
-        <ul class="flex flex-col gap-y-5">
-          {#each data.commands as { command, description }}
-            <CommandBox {command} {description} />
-          {/each}
-        </ul>
-      </section>
-
-      <section>
-        <h3 class="text-3xl border-b border-gray-300 mb-5">Combinaciones</h3>
-
-        <ul class="flex flex-col gap-y-5">
-          {#each data.snippets as { command, description }}
-            <CommandBox {command} {description} />
-          {/each}
-        </ul>
-      </section>
+      <CommandsSection title="Comandos" data={data.commands} />
+      <CommandsSection title="Combinaciones" data={data.snippets} />
     </div>
 
     <footer class="text-center mt-12 sticky bottom-7">

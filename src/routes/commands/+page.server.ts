@@ -1,9 +1,5 @@
+import type { CommandInterface } from '$types'
 import type { PageServerLoad } from './$types'
-
-interface Command {
-  description: string
-  command: string
-}
 
 export const load = (({ url }) => {
   const { searchParams } = url
@@ -30,7 +26,7 @@ export const load = (({ url }) => {
   const removeContainerCommand = `${runAsSudo}docker rm ${containerName}`
   const removeImageCommand = `${runAsSudo}docker rmi ${imageName}`
 
-  const commands: Command[] = [
+  const commands: CommandInterface[] = [
     {
       description: 'Crear imagen',
       command: `${runAsSudo}docker build -t ${imageName} .`
@@ -56,7 +52,7 @@ export const load = (({ url }) => {
       command: removeImageCommand
     }
   ]
-  const snippets: Command[] = [
+  const snippets: CommandInterface[] = [
     {
       description: 'Parar y borrar contenedor',
       command: [stopContainerCommand, removeContainerCommand].join(' && ')
