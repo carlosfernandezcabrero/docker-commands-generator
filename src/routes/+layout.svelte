@@ -1,7 +1,7 @@
 <script>
   import '../app.css'
-  import Header from '$components/header.svelte'
-  import Footer from '$components/footer.svelte'
+  import Header from '$components/common/header.svelte'
+  import Footer from '$components/common/footer.svelte'
   import { Toaster } from 'svelte-french-toast'
 </script>
 

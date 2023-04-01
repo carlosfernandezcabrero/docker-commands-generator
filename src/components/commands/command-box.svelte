@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Command from '$components/command.svelte'
+  import Command from '$components/commands/command.svelte'
   import ArrowRightNarrow from '$components/icons/arrow-right-narrow.svelte'
 
   export let command: string

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Copy from './icons/copy.svelte'
+  import Copy from '../icons/copy.svelte'
   import toast from 'svelte-french-toast'
 
   export let textToCopy: string

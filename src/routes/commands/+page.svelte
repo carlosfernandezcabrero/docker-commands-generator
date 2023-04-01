@@ -1,10 +1,9 @@
 <script>
+  import CommandBox from '$components/commands/command-box.svelte'
   import Command from '$components/command.svelte'
   import NavigationButton from '$components/common/navigation-button.svelte'
   import PreviousPage from '$components/icons/previous-page.svelte'
-  import ArrowRightNarrow from '$components/icons/arrow-right-narrow.svelte'
   import { fade } from 'svelte/transition'
-  import CommandBox from '$components/common/command-box.svelte'
 
   export let data
 
