@@ -8,7 +8,8 @@
 
 <li>
   <h3 class="mb-1 flex items-center gap-x-2">
-    <ArrowRightNarrow height="h-6" width="w-6" />{description}
+    <ArrowRightNarrow height="h-6" width="w-6" />
+    <span class="flex-1">{description}</span>
   </h3>
   <Command textToCopy={command}>{command}</Command>
 </li>
