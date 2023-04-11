@@ -40,6 +40,10 @@ export const load = (({ url }) => {
       command: `${runAsSudo}docker start ${containerName}`
     },
     {
+      description: 'Entrar en contenedor',
+      command: `${runAsSudo}docker exec -it ${containerName} sh`
+    },
+    {
       description: 'Parar contenedor',
       command: stopContainerCommand
     },
