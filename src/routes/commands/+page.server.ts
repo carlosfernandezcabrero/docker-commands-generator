@@ -44,6 +44,10 @@ export const load = (({ url }) => {
       command: `${runAsSudo}docker exec -it ${containerName} sh`
     },
     {
+      description: 'Ver los logs del contenedor',
+      command: `${runAsSudo}docker logs ${containerName}`
+    },
+    {
       description: 'Parar contenedor',
       command: stopContainerCommand
     },
