@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store'
 
-interface Params {
+export interface Params {
   configForwarderPorts: boolean
   configHostname: boolean
   containerName: string
@@ -9,6 +9,7 @@ interface Params {
   hostname: string
   imageName: string
   runAsSudo: boolean
+  likedCommands: string[]
 }
 
 export const paramsStore = writable<Params>({
@@ -19,5 +20,6 @@ export const paramsStore = writable<Params>({
   forwarderPorts: [],
   hostname: '',
   imageName: '',
-  runAsSudo: false
+  runAsSudo: false,
+  likedCommands: []
 })

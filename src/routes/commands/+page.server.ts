@@ -59,7 +59,11 @@ export const load = (({ url }) => {
       description: 'Borrar imagen',
       command: removeImageCommand
     }
-  ]
+  ].map((command, idx) => ({
+    ...command,
+    id: `c${idx}`
+  }))
+
   const snippets: CommandInterface[] = [
     {
       description: 'Parar y borrar contenedor',
@@ -73,7 +77,10 @@ export const load = (({ url }) => {
         removeImageCommand
       ].join(' && ')
     }
-  ]
+  ].map((command, idx) => ({
+    ...command,
+    id: `s${idx}`
+  }))
 
   return { commands, snippets, containerName }
 }) as PageServerLoad
