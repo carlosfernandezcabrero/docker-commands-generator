@@ -11,6 +11,10 @@
 
   const goToHome = () => history.back()
 
+  let likedCommands: CommandInterfaceWithId[] = []
+  let commandsFiltered: CommandInterfaceWithId[] = []
+  let snippetsFiltered: CommandInterfaceWithId[] = []
+
   $: likedCommands = [...data.commands, ...data.snippets].filter(
     ({ id }: CommandInterfaceWithId) => $paramsStore.likedCommands.includes(id)
   )

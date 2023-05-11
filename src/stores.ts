@@ -1,3 +1,4 @@
+import { browser } from '$app/environment'
 import { writable } from 'svelte/store'
 
 export interface Params {
@@ -12,6 +13,14 @@ export interface Params {
   likedCommands: string[]
 }
 
+let initialLikedCommands: string[] = []
+
+if (browser && localStorage.getItem('likedCommands') !== null) {
+  initialLikedCommands = (
+    localStorage.getItem('likedCommands') as string
+  ).split(',')
+}
+
 export const paramsStore = writable<Params>({
   configForwarderPorts: false,
   configHostname: false,
@@ -21,5 +30,5 @@ export const paramsStore = writable<Params>({
   hostname: '',
   imageName: '',
   runAsSudo: false,
-  likedCommands: []
+  likedCommands: initialLikedCommands
 })

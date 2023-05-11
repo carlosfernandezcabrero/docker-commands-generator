@@ -21,6 +21,8 @@
         likedCommands: [...params.likedCommands, id]
       }))
     }
+
+    localStorage.setItem('likedCommands', $paramsStore.likedCommands.join(','))
   }
 </script>
 
