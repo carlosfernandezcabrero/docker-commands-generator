@@ -14,9 +14,11 @@
   stroke-linejoin="round"
   class={`${width} ${height}`}
 >
-  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path stroke="none" d="M0 0h24v24H0z" />
   <path
-    d="M8 8m0 2a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2z"
+    d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"
   />
-  <path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2" />
+  <path
+    d="M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z"
+  />
 </svg>
