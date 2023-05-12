@@ -7,20 +7,15 @@
   export let description: string
   export let id: string
 
+  const isLiked = $paramsStore.likedCommands.includes(id)
+
   function handleLike() {
-    if ($paramsStore.likedCommands.includes(id)) {
-      paramsStore.update((params: Params) => ({
-        ...params,
-        likedCommands: params.likedCommands.filter(
-          (likedId: string) => likedId !== id
-        )
-      }))
-    } else {
-      paramsStore.update((params: Params) => ({
-        ...params,
-        likedCommands: [...params.likedCommands, id]
-      }))
-    }
+    paramsStore.update((params: Params) => ({
+      ...params,
+      likedCommands: isLiked
+        ? params.likedCommands.filter((likedId: string) => likedId !== id)
+        : [...params.likedCommands, id]
+    }))
 
     localStorage.setItem('likedCommands', $paramsStore.likedCommands.join(','))
   }
@@ -31,5 +26,6 @@
     <ArrowRightNarrow height="h-6" width="w-6" />
     <span class="flex-1">{description}</span>
   </h3>
-  <Command textToCopy={command} {handleLike}>{command}</Command>
+
+  <Command textToCopy={command} {handleLike} {isLiked}>{command}</Command>
 </li>
