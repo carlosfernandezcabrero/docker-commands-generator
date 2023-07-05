@@ -3,7 +3,7 @@
   <h1
     class="text-4xl font-semibold tracking-tighter text-docker-secondary text-center"
   >
-    Docker Commands Generator
+    <a href="/">Docker Commands Generator</a>
   </h1>
   <div class="flex-1 flex items-center justify-end" />
 </header>
