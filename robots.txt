@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
 
+User-agent: *
+Disallow: /commands/
+
 User-agent: Twitterbot
 Disallow:
