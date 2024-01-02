@@ -103,7 +103,11 @@
       </div>
 
       <footer class="mt-12 text-center">
-        <NavigationButton component={NextPage} onClick={handleSubmit} />
+        <NavigationButton
+          component={NextPage}
+          onClick={handleSubmit}
+          aria-label="Siguiente"
+        />
       </footer>
     </div>
   </section>

@@ -35,7 +35,11 @@
     </div>
 
     <footer class="text-center mt-12 sticky bottom-7">
-      <NavigationButton component={PreviousPage} onClick={goToHome} />
+      <NavigationButton
+        component={PreviousPage}
+        onClick={goToHome}
+        aria-label="Ir a inicio"
+      />
     </footer>
   </div>
 </Layout>
