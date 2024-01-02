@@ -11,6 +11,7 @@
 <svelte:head>
   {#each metas as [key, value]}
     <meta property={key} content={value} />
+    <meta name={key} content={value} />
   {/each}
 </svelte:head>
 
